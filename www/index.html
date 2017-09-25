@@ -116,7 +116,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                    <!--<input type="submit" id="doctorButton" onClick="doctor_sync();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Doctor & Generic Sync     "   />-->
                     <div align="center"><img id="wait_image_login" style="" width="50px;" src="loading.gif" alt=""></div>
                     <div align="middle"  style="color:#A4C5D9; width:100%; ">Don't have an account?</div>
-                    <input type="submit" id="loginButton" onClick="check_user();new_ps()"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="     Create New Account     "   />
+                    <input type="submit" id="loginButton" onClick="getDocDataop();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="     Create New Account     "   />
             <!--<a id="newAccountButton" data-role="button"  onClick="check_user()" >Create New Account</a>-->
                <!-- </div>-->
             </div>
@@ -3935,9 +3935,9 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 					<!---row one start-->
 					 <tr height="50px">
                        
-									<td id="imgStyle">
+									<td id="imgStyle" align="center">
 										<img  width="500" height="500" alt="" id="myImage1" onClick="gotoPic(1);">
-										<input name="prPhoto1" id="prPhoto1" type="text" value="" >
+										<input name="prPhoto1" id="prPhoto1" type="hidden" value="" >
 									</td>
 									<td>
 									
@@ -4509,79 +4509,62 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 <!------------------------ jahangirEditedEnd16Feb oportunity ----------------->  
 
 <!--=========================Cart page=====================-->
-
-      <div class="view" id="doctoropCartPageView">
+ <div class="view" id="doctoropCartPageView">
         <div class="pages">
-         <header style="height:70px">
-         </br>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                 
-                            <td width="2%" >
-                     
-                            </td>
-                    <td width="70%" >
-                       <!--<div class="input-group">-->   
-                         
-                         <span style="font-size:16px">Opportunity</span>
-                         <!--<div><b>Market :</b><span class="market"></span></div>
-                     <div><b>Doctor :</b><span class="visit_client" style="font-weight:bold"></span></div> -->
-                        <!--</div>-->
-                          
-                            
-                            </td>
-                            <td  width="10%"></td>
-                            <td align="right">
-                            <img src="icon-arrow-right_1.png" width="40" height="40" alt="Next" onClick="doctor_visitPr()" >
-
-                     
-                            </td>
-                            <td width="2%">
-                     
-                            </td>
-                          </tr>
-                        </table>
-         
-         
-         </header> 
+			 <header style="height:50px">
+			<table width="100%" border="0">
+          <tr>
+            <td width="10%" align="left">	</td>
+            <td align="center"><font style="font-size:18px; font-weight:bold">Sign Up</font></td>
+            <td width="10%" >&nbsp;</td>
+          </tr>
+        </table>
+				
+			</header> 
             <div class="panel" id="doctoropCartPage" style="background-color:#EDFEED">
-            </br></br></br></br></br>
-            
-                <!--<div class="card">-->
-                    <!--<h1>Sync</h1>-->
-                      
-                   <!-- </br>-->
-                   
-                            
-                            <div id="myerror_doctor_campaign" style="color:#C00"></div> 
-                            <div class="input-group">
-                        
-                        <table width="100%" border="1" cellspacing="0"  id="opCart"  style="border-color:#999; background-color:#EDFEED;" >
-               			 </table>
-                              
-                            
-                 </div>
-                   </div> 
+				</br></br></br></br></br></br>
+				
+				<input type="text" name="m_name" id="m_name" placeholder="Full Name " value="">
+                
+				<input type="number" name="m_age" id="m_age" placeholder="Age " value="">
+                <input type="text" name="gender" id="gender" placeholder="Male / Female " value="">
+                
+                
+                <input type="number" name="mobile_no" id="mobile_no" placeholder="Mobile no " value="">
+                <input type="text" name="cm_pass" id="cm_pass" placeholder="Password" value="">
+                
+                <input type="text" name="dist_name" id="dist_name" placeholder="District Name " value="">
+                <input type="text" name="address" id="address" placeholder="Address " value="">
+                
+                <input type="submit" id="loginButton"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="     Submit     "   />
+                           
+            </div> 
                <!-- </div>-->
-            </div>
+        </div>
        
-        <footer>
-        
-                <table width="100%" border="0">
-  <tr>
-    <!----- jahangirEditedStart19Feb page_opItemPage2 ---->
-    <td align="left">  <a onClick="page_opItemPage2()" class="icon left" ></a></td>
-     <!----- jahangirEditedEnd19Feb page_opItemPage2 ---->
-     <td width="40%">&nbsp;</td>
-     <td width="40%" style="font-size:16px; color:#FFF"></td>
-  </tr>
-</table>	
-         
-		  <!--<a onClick="homePage()" class="icon home" >Home</a>-->
-          
-           </footer>
+    <footer>
+		<table width="100%" border="0">
+		  <tr>
+		  
+			<td align="left"> </td>
+		  <!------
+			<td align="left">  <a onClick="page_imageSingle()" class="icon left" ></a></td>
+			------>
+			 <td >&nbsp;</td>
+			<td width="40%" style="font-size:16px; color:#FFF"></td>
+		  </tr>
+		</table>
+    </footer>
 
-    </div>    
+    </div>  
+
+
+
+
+
+
+
+
 
 
 
@@ -4609,4 +4592,4 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
 </body>
 
-</html>>>>>>>>>>>>>>>>>
+</html>>

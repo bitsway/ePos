@@ -12227,7 +12227,7 @@ function getDocOpData_keyup(product_id,status){
 	}
 	
 function getDocDataop(){
-	getDocDataopCart();
+	//getDocDataopCart();
 	
 	$.afui.loadContent("#doctoropCartPage",true,true,'right');;
 }
@@ -12633,7 +12633,7 @@ function cameraSuccess(uri){
 		localStorage.prPhoto10=uri
 	}
 	//alert (uri)
-	takePicture();
+	//takePicture();
 	
 	
    
