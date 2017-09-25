@@ -12310,15 +12310,15 @@ function gotoPic(picNo) {
 	var imageDiv="myImage"+picNo
 	var imageText="prPhoto"+picNo
 	
-	if (picNo!=localStorage.picNo){
-		localStorage.prProdID_Str=''
-		localStorage.opProdID_Str=''
-		getDocDataprCart()
-		$("#pr_id_lv").empty()
-		setPrProduct()
-		$("#op_id_lv").empty()
-		setOpProduct()
-	}
+	//if (picNo!=localStorage.picNo){
+//		localStorage.prProdID_Str=''
+//		localStorage.opProdID_Str=''
+//		getDocDataprCart()
+//		$("#pr_id_lv").empty()
+//		setPrProduct()
+//		$("#op_id_lv").empty()
+//		setOpProduct()
+//	}
 	localStorage.picNo=picNo
 	
 	var prPic=$("#"+imageText).val();
@@ -12327,7 +12327,7 @@ function gotoPic(picNo) {
 	image_show.src = prPic;
 	$("#myImagePrescription_show").val(prPic)
 	
-	alert (prPic)
+	//alert (prPic)
 	if (prPic!=''){		
 	$.afui.loadContent("#imageSinglePage",true,true,'right');
 	}
