@@ -500,18 +500,18 @@ function homePage() {
 	localStorage.today=today;						
 
 	//if ((localStorage.synced=='YES') & (localStorage.sync_date==today)){
-	if (localStorage.synced=='YES'){
-		if (localStorage.user_type=='sup'){
-			$("#chemisVDiv").hide();
-			$("#chSaveDiv").hide();
-		}
-		else{
-			$("#chemisVDiv").show();
-			$("#chSaveDiv").show();
-		}
+	//if (localStorage.synced=='YES'){
+//		if (localStorage.user_type=='sup'){
+//			$("#chemisVDiv").hide();
+//			$("#chSaveDiv").hide();
+//		}
+//		else{
+//			$("#chemisVDiv").show();
+//			$("#chSaveDiv").show();
+//		}
 		
 		$.afui.loadContent("#pageHome",true,true,'right');
-	}
+//	}
 	
 	//$("#error_login").html('');
 	//$.afui.loadContent("#pageHome",true,true,'right');
