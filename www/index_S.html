@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!-- Designed and developed by Business Solution Apps team v -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>MODERN TRADE</title>
+        
+        <link rel="stylesheet" href="static/my.css"  />
+		
+		<link rel="stylesheet" href="static/themes/c.min.css" />
+		<link rel="stylesheet" href="static/themes/jquery.mobile.icons.min.css" />
+        
+        <link rel="stylesheet" href="static/jquery.mobile-1.4.0/jquery.mobile-1.4.0.min.css" />
+        <script src="static/jquery/1.10.2/jquery-1.10.2.min.js">   </script>
+        <script src="static/jquery.mobile-1.4.0/jquery.mobile-1.4.0.min.js">   </script>
+		<script src="static/survey.js">  </script>
+		
+        
+        <style>
+		/*.ui-content{ background-color:#484848}*/
+				.custom-size-flipswitch.ui-flipswitch .ui-btn.ui-flipswitch-on {
+			text-indent: -5.9em;
+		}
+		.custom-size-flipswitch.ui-flipswitch .ui-flipswitch-off {
+			text-indent: 0.5em;
+		}
+		/* Custom widths are needed because the length of custom labels differs from
+		   the length of the standard labels */
+		.custom-size-flipswitch.ui-flipswitch {
+			width: 8.875em;
+		}
+		.custom-size-flipswitch.ui-flipswitch.ui-flipswitch-active {
+			padding-left: 7em;
+			width: 1.875em;
+		}
+		@media (min-width: 28em) {
+			// Repeated from rule .ui-flipswitch above
+			.ui-field-contain > label + .custom-size-flipswitch.ui-flipswitch {
+				width: 1.875em;
+			}
+		}
+		input[type=number],input[type=text]{ background-color:#F4FFFF;}
+		
+		.full-width-slider input {
+			display: none;
+			
+		}
+		.full-width-slider .ui-slider-track {
+			margin-left: 15px;
+			
+		}
+		
+	
+		</style>
+        <style>
+		.disabledAnchor a{
+		   pointer-events: none !important;
+		   cursor: default;
+		   color:white;
+		}
+		</style>
+        
+   <script>
+<!--
+$(document).ready(function(){
+				//alert (localStorage.saved_req);
+				buttonCheck();
+				$("#login_image").hide();
+				$("#routeS_image").hide();
+				//alert (localStorage.latlongSubmit);
+				
+				$("#lat").val(localStorage.latitude);
+				$("#long").val(localStorage.longitude);
+				//$("#sub_button").hide();
+				buttonCheck();
+				
+				
+				
+			
+				//$('#outlet_info_msg').html(localStorage.outletNameID);
+//				
+//				$("#routeString").html(localStorage.routeString);
+//				$("#routeExString").html(localStorage.routeExStringShow);
+				$("#outletString").html(localStorage.outletString);
+//				
+//				//alert (localStorage.outletExStringShow);
+//				$("#outletExString").html(localStorage.outletExStringShow);
+//				$("#outletInfo").html(localStorage.outletinfoString);
+//				
+//				
+//				$("#mhskus").html(localStorage.mhskusStringShow);
+				$("#npd").html(localStorage.npdStringShow);
+				$("#fdisplay").html(localStorage.fdisplayStringShow);
+//				
+//				$("#fdisplayStringShowBefore").html(localStorage.fdisplayStringShowBefore);
+				
+				$("#qpds").html(localStorage.qpdsStringShow);
+			//	alert (localStorage.qpdsStringShow)
+//				//$("#gift").html(localStorage.giftStringShow);
+//				$("#gift").empty();
+//				$("#gift").append(localStorage.giftStringShow).trigger('create');
+//				//alert (localStorage.giftStringShow);
+//				$("#marchadizing").html(localStorage.marchadizingStringShow);
+				
+				$("#startTime").val(localStorage.startTime);
+				$("#endTime").val(localStorage.endTime);
+				
+				
+				$("#marchadizing_add_show").html(localStorage.m_new);
+				
+				
+				
+				$("#outletName_show").html(localStorage.outletNameID);
+				
+				$('#cancel_reason').empty();
+				$('#cancel_reason').append(localStorage.cancel_combo_str);
+				//alert (localStorage.place_combo_str)
+				$('#place_combo_show').empty();
+				$('#place_combo_show').append(localStorage.place_combo_str);
+				
+				
+				
+   				first_page();
+				
+				
+				//alert (localStorage.show_cancel)
+				if (localStorage.show_cancel==0){
+				 cancel_outlet();
+				}
+				if (localStorage.show_cancel==1){
+				 div_change();
+				 $("#outletButton").show();
+				 
+				}
+				if (localStorage.cancel_page==0){
+					$("#next_option").hide();
+					$("#cancel_option").show()
+				}
+				if (localStorage.cancel_page==1){
+					$("#next_option").show();
+					$("#cancel_option").hide()
+				}
+				
+				
+				
+				$("#fdisplay_test").val(localStorage.fdisplayStringShow);
+				
+				$('#outletSyncmsg').html(localStorage.syncinfo);
+				
+				
+				$("#selectItem").html(localStorage.marchadizingItemStringShow);
+				
+				$("#selectBrand").html(localStorage.marchadizingBrandStringShow);
+				
+				
+				//alert (localStorage.m_new);
+				//=======check sync date
+				var sync_date_get=get_date();
+				var sync_y=sync_date_get.split('-')[0];
+				var sync_m=sync_date_get.split('-')[1];
+				if (sync_m.length==1){sync_m='0'+sync_m}
+				var sync_d=sync_date_get.split('-')[2].split(' ')[0];
+				if (sync_d.length==1){sync_d='0'+sync_d}
+				var sync_date=sync_y +'-'+ sync_m +'-'+sync_d;
+				//alert (sync_date);
+				//alert (sync_date);
+				//alert (localStorage.sync_date);
+				//localStorage.sync_date='2014-07-11';
+				
+				//alert (localStorage.synced);
+				
+				if (localStorage.synced=='YES'){
+					$("#cm_id").val(localStorage.cm_id);
+					$("#cm_pass").val(localStorage.cm_pass);
+				}
+				if ((localStorage.synced=='YES') & (localStorage.sync_date!=sync_date)){
+					//alert (localStorage.sync_date);
+					cancel_outlet();
+					
+					localStorage.show_cancel=0;
+								
+					localStorage.m_new_string="";
+					localStorage.m_new="";
+					localStorage.selectedOutlet="";
+					localStorage.outletExStringShow="";
+					localStorage.outletException="";
+					localStorage.outletChanne="";
+					localStorage.outletNameID="";
+					localStorage.mhskusTotal="";
+					
+					localStorage.npdTotal="";
+					localStorage.fdisplaySlabTotal="";
+					localStorage.fdisplayTotal="";
+					localStorage.qpdsSlabTotal="";
+					
+					localStorage.qpdsTotal="";
+					localStorage.giftTotal="";
+					localStorage.marchadizingTotal="";
+					localStorage.mhskus_data_ready="";
+					localStorage.npd_data_ready="";
+					localStorage.fdisplay_data_ready="";
+					localStorage.qpds_data_ready="";
+					localStorage.gift_data_ready="";
+					localStorage.mar_data_ready="";
+					
+					//localStorage.sync_date=sync_date;
+					//localStorage.synced=='YES';
+					
+					
+					//distributon
+					localStorage.mar_distrib_data=""
+					localStorage.merchandisingDistribStr=""
+					localStorage.mar_distrib_stock=""
+					
+					
+					//alert (localStorage.sync_date)
+				//	check_route();
+					var url = "#login";
+					$.mobile.navigate(url);
+					
+				//	location.reload()
+				}
+				//else{
+//					var url = "#index.html";
+//					$.mobile.navigate(url);
+//				}
+				//=====================
+				//alert (localStorage.mhskus_data_ready);
+				
+				
+				//alert ('aaaaaa')
+				Cat_page_set();
+				
+//				qpds_page_set();
+				//npd_page_set();
+				place_page_set();
+				sf_page_set();
+				shop_page_set();
+				fdisplay_page_set();
+				//mhskus_page_set();
+				//gift_page_set();
+				
+				//keyTaskPage_set();
+				
+				
+				//alert (localStorage.outletIDnameShow)
+				
+				$("#place_outlet_nameID").html(localStorage.outletIDnameShow);
+				$("#cpageOutletNameID").html(localStorage.outletIDnameShow);
+				
+				//alert ("ssssssss");
+				buttonCheck();
+				$("#lat").val(localStorage.latitude);
+				$("#long").val(localStorage.longitude);
+				
+				if (localStorage.saved_visit=='YES'){
+				
+				$("#saved_button").html('<a data-role="button" onClick="savedVisit()" ><img src="saved_visit.png"></a>')
+				
+				}
+				
+				//alert (localStorage.outletIDnameShow);
+				
+				//alert (localStorage.outletIDnameShow);
+			  //====check div disable====
+			  //fdisplay
+		//	  for (var i=0; i < localStorage.fdisplaySlabTotal-1; i++){
+//				  if (localStorage.fdsl)
+//				 
+//				  //$('#fddiv_'+id).find('input, textarea, button, select').attr('disabled','disabled');
+//			  }
+			  
+			  //================
+  				
+		});
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+//-->
+</script>	
+  
+    </head>
+    
+
+    <body>  
+    
+ 
+
+     <!--======================Menu page start==================-->        
+        <div data-theme="c" data-role="page" id="menuPage"   >
+       
+           <div data-role="panel" id="routePanel" data-display="overlay" style="width:60%;">
+				<!-- panel content goes here -->
+				<img style="width:100%;"  src="unilogo1.png" alt="UNILEVER" /><br>
+				<font style="color:#007D7D; font-size:25px;">EPOS</font><br>
+				<font style="color:#007D7D; font-size:11px;">© 2017 EON Systems Ltd.</font>
+				<br><br><br>
+				
+				  <ul data-role="listview">
+							
+                    		
+                            <div style="background:#008A8A; height:1px"></div>
+                            <li><a href="#login" ><img src="sync.png"></a></li>
+                            <div style="background:#008A8A; height:1px"></div>
+							<!--<li><a onClick="clear_autho()" href="#login">Clear Authorization</a></li>
+                            <div style="background:#008A8A; height:1px"></div>-->
+					</ul>
+					<br>
+				<div style="margin:100%;"></div>
+				<img src="logo_gp_p_1.png" alt="Grameen Phone" />
+				
+			</div><!-- /panel -->
+            
+             <div data-theme="c" data-role="header" data-position="fixed" > 
+			
+			    <a style="height:18px"  href="#routePanel" ><img src="unilogo13.png"></a>
+                <a style="height:18px" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right " onClick="exit()" ><img src="exit.png"> </a>
+                <!--<a data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-power ui-btn-icon-notext " onClick="exit()" ><img src="exit.png"> </a>-->
+                <h3>Home</h3>
+            </div>
+			
+			<div data-role="content" align="center" style="height:90%" >
+            	<br><br>
+				
+				<font color="#CCFFCC" face="Arial, Helvetica, sans-serif" size="-1">       
+			   <!--<a data-role="button" onClick="marketPJP_check()" ><img src="market_pjp.png"></a>-->
+			   
+               <!--<a data-role="button" onClick="savedVisit()" ><img src="saved_visit.png"></a>-->
+               <!--<div id="saved_button">--><!--'</div>-->
+               <!--<a data-role="button" href="#noticePage" onClick="test()" ><img src="notice_icon.png"></a>-->
+               
+               
+                      <!-- =====================Category Page Start============================-->
+        
+        
+		   
+		    
+                
+				
+                </br></br></br>
+                <div  style="color:#006A6A; font-size:18px;" id="outletInfoCategory"> </div>
+                
+               
+              		
+                   
+                      
+                   
+					<div id="HairCare">
+                    
+                    
+                  <!-- <font style="color:#5494E2; font-size:20px "> Prescription </font>-->
+                     <table width="100%" border="0"><tr>
+					  <tr><td><a data-role="button" href="#" onClick="get_pic_HairCare(1)" >Take Picture </a></td></tr>
+					</table>
+                    
+                    <table  width="100%" border="0">
+                      <tr>
+                        <td style="width:70%">
+                        <input type="hidden" name="HairCare_image_div_hidden1" id="HairCare_image_div_hidden1" value="" >
+						<input type="hidden" name="HairCare_image_name_hidden1" id="HairCare_image_name_hidden1" value="" >
+                        <img id="HairCare_image_div1" height="100px" width="100px"  src="" alt="Pic" />
+                        </td>
+                        <!--<td align="right">
+                            <input type="number" name="HairCare_height1" id="HairCare_height1" placeholder="Height" >
+                            <input type="number" name="HairCare_width1" id="HairCare_width1" placeholder="Width" >
+                        </td>-->
+                      </tr>
+                      <tr>
+                      <td>
+                      <textarea id="e_note" name="e_note" placeholder="Please write your notes here..."></textarea>
+                      </td>
+                      </tr>
+                    </table>
+                    
+                     </div>
+						
+<!--				<a data-role="button" onClick="" >Submit</a>
+-->
+               				
+				<br/><br/>
+				<a data-role="button" onClick="setCat_data();" >Submit</a>
+
+                <div id="dataerror" style="color:#FF0; font-family:Arial, Helvetica, sans-serif; text-decoration:none; font-size:12px; font-style:normal; font-weight:lighter; text-shadow:none"  align="center"> </div>
+                <br/><br/>
+
+                <br/><br/><br/>
+								
+		   
+	<!-- /route page -->
+        
+        
+        
+        
+        
+        
+        <!-- =====================Category Page End============================-->
+        
+				
+                </font>
+            </div>
+        </div>
+    
+    
+     <!--======================Menu page end==================-->   
+    
+    
+      <!--  ================= login page=================  -->
+        
+        <div data-theme="c" data-role="page" id="login"   >
+            <div data-theme="c" data-role="header" data-position="fixed" >
+			
+			   <a style=" height:18px"   onClick="munu_page_check()"  class="ui-btn-left ui-btn-icon-notext"><img src="unilogo13.png"></a>
+               <a data-role="button" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-power ui-btn-icon-notext " onClick="exit()" >Exit </a>
+                <h3>Login</h3>
+            </div>
+			
+			<div data-role="content" style="height:90%" >    
+               
+				<font color="#CCFFCC" face="Arial, Helvetica, sans-serif" size="-1"> 
+                </br></br>
+                             
+				<input type="text" name="cm_id" id="cm_id" placeholder="Mobile no." value="">
+				<input type="number" name="cm_pass" id="cm_pass" placeholder="Password" value="">
+                </font>                
+				</br></br>	
+				
+                
+                <div id="login_image" ><img height="40px" width="40px" src="loading.gif"></div>
+                <a id="loginButton" data-role="button"  onClick="check_user()" >Log In</a>		
+                
+                </br></br></br></br>
+                
+                <!-- <a id="loginButton" data-role="button"  onClick="clear_autho()" >Clear Authorization</a>-->			
+				<div id="error_login" style="color:#006291"></div>
+				
+					   
+            </div>
+			
+		
+			<div align="middle"  style="color:#A4C5D9; width:100%; ">Don't have an account?</div>
+            <a id="newAccountButton" data-role="button"  onClick="check_user()" >Create New Account</a>
+        </div><!--/login page-->
+   
+ 
+    
+ 
+ 
+     <!-- ============================wait page Start============================-->
+    
+    <div data-theme="c" data-role="page" id="submitPage">
+		    <div data-theme="c" data-role="header" data-position="fixed" >
+			    <a style="height:18px"   onClick="munu_page_check()"  class="ui-btn-left ui-btn-icon-notext"><img src="unilogo13.png"></a>
+                <a style="height:18px" data-rel="back" data-iconpos="left" class="ui-btn-right"><img src="back1.png"></a>
+                <h3>Submit</h3>
+            </div>
+		    
+			<div  data-role="content" style="height:90%" >
+                <div id="outlet_info_msg"   style="color:#006A6A; font-size:18px;"> </div>
+                </br>
+                </br>
+				Location:
+				<input name="lat" id="lat" placesholder="" value="" type="text" readonly>
+			   <input name="long" id="long" placeholder="" value="" type="text" readonly>
+				
+			<div id="location_button">
+			<a data-role="button" onClick="getlocationand_askhelp();">Confirm Location</a>
+			</div>
+            <div id="dataShow"></div>        
+			<div id="sub_button_div">
+        	<a  data-role="button" onClick="submit_data();" >Submit Data</a>
+			</div> 
+			
+
+			<div id="image_up_button">
+        	<a   data-role="button" onClick="check_step();" >Complete Submission</a>			
+			</div>
+			<div id="NOutlet_button">
+        	<a  data-role="button" onClick="cancel_outlet();menupage();" >Select New Outlet</a>
+			</div>
+			  
+            
+            <div id="submit_data" style="color:#006291"></div>
+            <div id="submit_data_check" style="color:#006291"></div>
+            <!--<div id="submit_msg">
+				Please Wait Submitting Data............
+			</div>-->
+			
+              <div id="dataerror" style="color:#FF0; font-family:Arial, Helvetica, sans-serif; text-decoration:none; font-size:12px; font-style:normal; font-weight:lighter; text-shadow:none"  align="center"> </div>
+                <br/><br/>
+                <br/><br/><br/>
+	  </div>
+
+	</div>
+        
+    <!--=====================wait page end=========================-->  
+    
+    
+  
+              
+
+ 
+ 
+
+ <!-- ============================cancel  page Start============================-->
+    
+    <!--<div data-theme="c" data-role="page" id="cancelPage">
+		<div data-theme="c" data-role="header" data-position="fixed" >
+			    <a style="height:18px" onClick="munu_page_check()"  class="ui-btn-left ui-btn-icon-notext"><img src="unilogo13.png"></a>
+                <a style="height:18px" data-rel="back" data-iconpos="left" class="ui-btn-right"><img src="back1.png"></a>
+                <h3>Outlet</h3>
+            </div>
+		    
+			<div  data-role="content" style="height:90%" >
+            
+          
+           
+		 
+		  
+		  <div id="cpageOutletNameID"> </div>
+		  
+		 
+		  
+		  	 <div id="shop_show">
+				  <table width="100%" border="0"><tr>
+					  <tr>
+						<td><a data-role="button" href="#" onClick="get_pic_shop()" >Take Picture </a></td></tr>
+					</table>
+					<img id="shop_image_div" height="100px" width="100px"  src="" alt="Place" />
+						<input type="hidden" name="shop_image_div_hidden" id="shop_image_div_hidden" value="" >
+						<input type="hidden" name="shop_image_name_hidden" id="shop_image_name_hidden" value="" >
+					</div> <!--shop_show-->			
+						</br></br>
+					<div id="cancel_option">	
+						<div id="c_reason"></div>
+						Cancel Reason:
+						<div id="cancel_reason">
+						  <!--<select name="cancel_cause" id="cancel_cause" >
+							<option value=""></option>
+							<option value="Will try later">Will try later</option>
+							<option value="Outlet is closed">Outlet is closed</option>
+							<option value="Outlet renovation">Outlet renovation</option>
+							<option value="Owner is reluctant">Owner is reluctant</option>
+							<option value="Owner not available with shop picture">Owner not available with shop picture</option>
+						  </select>-->
+						  </div> <!--cancel_reason-->
+						</br>
+				
+				
+				
+                <a data-role="button" onClick="cancel_outlet_Back();" >End</a>				
+				</div> <!--cancel_option-->
+				
+				
+				
+				
+				<div id="next_option">
+				<!--<a data-role="button" onClick="outlet_next_page();getlocationand_askhelp();" >Next</a>-->
+				<a data-role="button" onClick="outlet_next_page();getlocationand_askhelp();" >Next</a>
+				</div>
+				<br/><br/></br></br></br></br></br></br><br/><br/><br/>
+				
+              <div id="dataerror" style="color:#FF0; font-family:Arial, Helvetica, sans-serif; text-decoration:none; font-size:12px; font-style:normal; font-weight:lighter; text-shadow:none"  align="center"> </div>
+                <br/><br/>
+
+                <br/><br/><br/>
+								
+	  </div>
+
+	</div>-->
+        
+    <!--=====================cancel  page end=========================-->	
+	
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<!-- ============Saved visit Page Start================-->
+    <!--<div data-theme="c" data-role="page" id="savedVisitPage">
+		    <div data-theme="c" data-role="header" data-position="fixed" >
+			    <a style="height:18px" onClick="munu_page_check()"  class="ui-btn-left ui-btn-icon-notext"><img src="unilogo13.png"></a>
+                <a style="height:18px" data-rel="back" data-iconpos="left" class="ui-btn-right"><img src="back1.png"></a>
+                <h3>Saved Visit</h3>
+            </div>
+		    
+			<div  data-role="content" style="height:90%" >	
+             <span style=" font-size:5"> <br/><br/></span>				
+					<div id="savedVisitRecordError"> </div>	
+                    <div id="login_image_saved" ><img height="40px" width="40px" src="loading.gif"></div>
+              		<div id="savedVisitRecord"> </div>		
+			
+				<br/><br/>
+
+				
+
+                <div id="dataerrorsave" style="color:#006291"> </div>
+                <br/><br/>
+
+                <br/><br/><br/>
+								
+			</div>
+		 
+		</div>-->  <!-- /route page -->
+        
+<!--=====================Saved visit Page end=============-->
+ 
+ <script type="text/javascript" src="phonegap.js"></script>
+ 
+ 
+ 
+    </body>
+</html>
