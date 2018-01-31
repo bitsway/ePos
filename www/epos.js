@@ -19,7 +19,8 @@ $.afui.useOSThemes=false;
 
 /********  apipath *****************/
 
-var  apipath ='http://127.0.0.1:8000/epos/syncmobile_epos/'
+//var  apipath ='http://127.0.0.1:8000/epos/syncmobile_epos/'
+var  apipath ='http://w02.yeapps.com/epos/syncmobile_epos/'
 
 //var  apipath ='http://a007.yeapps.com/acme/medSearch/'
 //var  apipath ='http://127.0.0.1:8000/acme/medSearch/'
@@ -143,7 +144,7 @@ function check_user() {
 					localStorage.sync_code=0
 				}
 			
-			alert (apipath+'check_user?cid='+localStorage.cid+'&mobile_no='+mobile_no+'&m_pass='+encodeURIComponent(m_pass)+'&sync_code='+localStorage.sync_code)		
+			//alert (apipath+'check_user?cid='+localStorage.cid+'&mobile_no='+mobile_no+'&m_pass='+encodeURIComponent(m_pass)+'&sync_code='+localStorage.sync_code)		
 				
 			$.ajax({
 			  type:'POST',		 
