@@ -523,12 +523,12 @@ function prescriptionSave(){
 			 
 			var m_id=$("#m_id").val();
 			var mobile_no=$("#mobile_no").val();
-			var p_image=$("#prPhoto1").val();
+			var prescriptionPhoto=$("#prPhoto1").val();
 			var notes=$("#notes").val();
 			var submit_date_time=$("#submit_date_time").val();
 			
 			var tempTime = $.now();
-			p_image=tempTime.toString()+"_pr.jpg";
+			var p_image=tempTime.toString()+"_pr.jpg";
 			
 		//	alert(salary);
 //alert('ok')
@@ -546,8 +546,11 @@ function prescriptionSave(){
 						
 						if(result2=='Success'){							
 						  
+							
+							upload_image(prescriptionPhoto, p_image);
+							
+							
 							$("#errorChk").html("Submitted Successfully");
-							upload_image(prescriptionPhoto, imageName);
 							$("#pSaveBtn").show();
 							
 							var imageDiv="myImage1"
