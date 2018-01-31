@@ -546,7 +546,8 @@ function prescriptionSave(){
 						
 						if(result2=='Success'){							
 						  
-							
+							alert (prescriptionPhoto)
+							alert (p_image)
 							upload_image(prescriptionPhoto, p_image);
 							
 							
