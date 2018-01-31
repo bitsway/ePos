@@ -171,7 +171,7 @@ function check_user() {
 							if (resultArray[0]=='SUCCESS'){
 								localStorage.sync_code=resultArray[1];
 								localStorage.sync_time=resultArray[2];
-						//		localStorage.noticeStr=resultArray[3];
+								localStorage.m_id=resultArray[3];
 								//alert (localStorage.sync_code)
 							//	localStorage.outletString=resultArray[2];
 //								localStorage.prodctStr=resultArray[3];
@@ -537,7 +537,7 @@ function prescriptionSave(){
 		
 			$.ajax({
 					type: 'POST',
-					url:apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&synccode='+localStorage.sync_code+'&m_id='+m_id+'&mobile_no='+localStorage.mobile_no+'&p_image='+p_image+'&notes='+notes+'&submit_date_time='+submit_date_time,
+					url:apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&synccode='+localStorage.sync_code+'&m_id='+localStorage.m_id+'&mobile_no='+localStorage.mobile_no+'&p_image='+p_image+'&notes='+notes+'&submit_date_time='+submit_date_time,
 					
 					
 					
@@ -884,7 +884,7 @@ function newMemReg(){
 	  }else{*/
 	//  alert (otltName)
      // alert ('hi')
-	  alert(apipath+'memDetailsSave?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&sync_code='+localStorage.sync_code+'&m_id='+m_id+'&m_name='+m_name+'&m_age='+m_age+'&gender='+gender+'&mobile_no='+mobile_no+'&m_pass='+m_pass+'&div_name='+div_name+'&dist_name='+dist_name+'&address='+address)
+	 // alert(apipath+'memDetailsSave?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&sync_code='+localStorage.sync_code+'&m_id='+m_id+'&m_name='+m_name+'&m_age='+m_age+'&gender='+gender+'&mobile_no='+mobile_no+'&m_pass='+m_pass+'&div_name='+div_name+'&dist_name='+dist_name+'&address='+address)
 //	  alert('hello')
 	  
 	  $.ajax({
