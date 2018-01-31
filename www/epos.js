@@ -43,7 +43,7 @@ var imageURI='http://i001.yeapps.com/image_hub/unigift/upload_image/'
 		
 	//	$("#wait_image_login").hide();
 		$("#loginButton").show();
-		
+		$("#errorChk").html("");
 
 		
 		
@@ -171,7 +171,7 @@ function check_user() {
 							if (resultArray[0]=='SUCCESS'){
 								localStorage.sync_code=resultArray[1];
 								localStorage.sync_time=resultArray[2];
-								localStorage.m_id=resultArray[3];
+								localStorage.m_id=resultArray[2];
 								//alert (localStorage.sync_code)
 							//	localStorage.outletString=resultArray[2];
 //								localStorage.prodctStr=resultArray[3];
@@ -514,7 +514,7 @@ function imageSinglePage() {
 
 
 function page_PrescriptionCapture() {	
-
+	$("#errorChk").html("");
 	$.afui.loadContent("#page_PrescriptionCapture",true,true,'right');
 }
 
@@ -548,7 +548,18 @@ function prescriptionSave(){
 						  
 							$("#errorChk").html("Submitted Successfully");
 							upload_image(prescriptionPhoto, imageName);
-							$("#pSaveBtn").show();						
+							$("#pSaveBtn").show();
+							
+							var imageDiv="myImage1"
+							var myImagePrescription_show="myImagePrescription_show"
+							var uri=''
+							var image = document.getElementById(imageDiv);
+							var image1 = document.getElementById(myImagePrescription_show);
+							image.src = uri;
+							image1.src = uri;
+							
+							
+													
 						}else{
 							$("#errorChk").html('Unauthorized Access');																	
 							$("#pSaveBtn").show();
