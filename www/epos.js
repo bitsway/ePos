@@ -177,6 +177,7 @@ function check_user() {
 //								localStorage.prodctStr=resultArray[3];
 //								//localStorage.memMbStr=''
 //								localStorage.recMemStr=resultArray[4];
+								localStorage.mobile_no=mobile_no
 								$.afui.loadContent("#pageHome",true,true,'right');
 //				
 							}
@@ -518,7 +519,7 @@ function page_PrescriptionCapture() {
 }
 
 function prescriptionSave(){
-		      
+		   $("#pSaveBtn").hide();   
 			 
 			var m_id=$("#m_id").val();
 			var mobile_no=$("#mobile_no").val();
@@ -526,7 +527,8 @@ function prescriptionSave(){
 			var notes=$("#notes").val();
 			var submit_date_time=$("#submit_date_time").val();
 			
-	
+			var tempTime = $.now();
+			p_image=tempTime.toString()+"_pr.jpg";
 			
 		//	alert(salary);
 //alert('ok')
@@ -535,7 +537,7 @@ function prescriptionSave(){
 		
 			$.ajax({
 					type: 'POST',
-					url:apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&synccode='+localStorage.sync_code+'&m_id='+m_id+'&mobile_no='+mobile_no+'&p_image='+p_image+'&notes='+notes+'&submit_date_time='+submit_date_time,
+					url:apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&synccode='+localStorage.sync_code+'&m_id='+m_id+'&mobile_no='+localStorage.mobile_no+'&p_image='+p_image+'&notes='+notes+'&submit_date_time='+submit_date_time,
 					
 					
 					
@@ -544,11 +546,11 @@ function prescriptionSave(){
 						
 						if(result2=='Success'){							
 						  
-							$(".errorChk").text("Submitted Successfully");
+							$("#errorChk").html("Submitted Successfully");
 							upload_image(prescriptionPhoto, imageName);
 							$("#pSaveBtn").show();						
 						}else{
-							$(".errorChk").text('Unauthorized Access');																	
+							$("#errorChk").html('Unauthorized Access');																	
 							$("#pSaveBtn").show();
 							}
 					   
