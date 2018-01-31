@@ -21,6 +21,7 @@ $.afui.useOSThemes=false;
 
 //var  apipath ='http://127.0.0.1:8000/epos/syncmobile_epos/'
 var  apipath ='http://w02.yeapps.com/epos/syncmobile_epos/'
+var apipath_image='http://i001.yeapps.com/image_hub/unigift/upload_image/'
 
 //var  apipath ='http://a007.yeapps.com/acme/medSearch/'
 //var  apipath ='http://127.0.0.1:8000/acme/medSearch/'
@@ -530,7 +531,7 @@ function prescriptionSave(){
 		//	alert(salary);
 //alert('ok')
 				
-			alert(apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&synccode='+localStorage.sync_code+'&m_id='+m_id+'&mobile_no='+mobile_no+'&p_image='+p_image+'&notes='+notes+'&submit_date_time='+submit_date_time)
+			//alert(apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&synccode='+localStorage.sync_code+'&m_id='+m_id+'&mobile_no='+mobile_no+'&p_image='+p_image+'&notes='+notes+'&submit_date_time='+submit_date_time)
 		
 			$.ajax({
 					type: 'POST',
@@ -544,6 +545,7 @@ function prescriptionSave(){
 						if(result2=='Success'){							
 						  
 							$(".errorChk").text("Submitted Successfully");
+							upload_image(prescriptionPhoto, imageName);
 							$("#pSaveBtn").show();						
 						}else{
 							$(".errorChk").text('Unauthorized Access');																	
@@ -815,7 +817,32 @@ function prescription_submit(){
 
 /************  prescription_submit End **************/
 
+function upload_image(imageURI, imageName) {
+   // alert (localStorage.photo_submit_url)
+   //alert (imageURI+' |  '+imageName)
+	var options = new FileUploadOptions();
+    options.fileKey="upload";
+    options.fileName=imageName;
+    options.mimeType="image/jpeg";
+	
+    var params = {};
+    params.value1 = "test";
+    params.value2 = "param";
+	
+    options.params = params;
+	options.chunkedMode = false;
+	
+    var ft = new FileTransfer();
+     ft.upload(imageURI, encodeURI(apipath_image),winProfile,failProfile,options);
+	 
+}
 
+function winProfile(r) {
+}
+
+function failProfile(error) {
+	//$("#error_prescription_submit").text('Memory Error. Please take new picture and Submit');
+}	
 
 //=================================
 
