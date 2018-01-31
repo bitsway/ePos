@@ -522,7 +522,7 @@ function prescriptionSave(){
 			 
 			var m_id=$("#m_id").val();
 			var mobile_no=$("#mobile_no").val();
-			var p_image=$("#p_image").val();
+			var p_image=$("#prPhoto1").val();
 			var notes=$("#notes").val();
 			var submit_date_time=$("#submit_date_time").val();
 			
@@ -576,7 +576,7 @@ function page_notice() {
 //      var m_age=$("#m_age").val();
 			//alert (apipath+'check_user?cid='+localStorage.cid+'&mobile_no='+mobile_no+'&m_pass='+encodeURIComponent(m_pass)+'&sync_code='+localStorage.sync_code)		
 
-      alert(apipath+'notice?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&sync_code='+localStorage.sync_code)
+      //alert(apipath+'notice?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_pass='+encodeURIComponent(localStorage.m_pass)+'&sync_code='+localStorage.sync_code)
      // alert('hello')
       
       $.ajax({
@@ -993,42 +993,18 @@ navigator.camera.getPicture( cameraSuccess, cameraError, {
 function cameraSuccess(uri){  
 	localStorage.picFlag=0
 	var picNo=parseInt(localStorage.picFlag)+1 
-	var imageDiv="myImage"+picNo
-	var imageText="prPhoto"+picNo
+	var imageDiv="myImage1"
+	var imageText="prPhoto1"
+	var myImagePrescription_show="myImagePrescription_show"
 	localStorage.picFlag=picNo
 	var image = document.getElementById(imageDiv);
+	var image1 = document.getElementById(myImagePrescription_show);
 	image.src = uri;
+	image1.src = uri;
 	imagePath = uri;
-	if (picNo==1){
-		localStorage.prPhoto1=uri
-	}
-	if (picNo==2){
-		localStorage.prPhoto2=uri
-	}
-	if (picNo==3){
-		localStorage.prPhoto3=uri
-	}
-	if (picNo==4){
-		localStorage.prPhoto4=uri
-	}
-	if (picNo==5){
-		localStorage.prPhoto5=uri
-	}
-	if (picNo==6){
-		localStorage.prPhoto6=uri
-	}
-	if (picNo==7){
-		localStorage.prPhoto7=uri
-	}
-	if (picNo==8){
-		localStorage.prPhoto8=uri
-	}
-	if (picNo==9){
-		localStorage.prPhoto9=uri
-	}
-	if (picNo==10){
-		localStorage.prPhoto10=uri
-	}
+	
+	localStorage.prPhoto1=uri
+	
 	//alert (uri)
 	//takePicture();
 	
@@ -1036,6 +1012,8 @@ function cameraSuccess(uri){
    
     
 	$("#"+imageText).val(imagePath);
+	
+	
         
 }
 
