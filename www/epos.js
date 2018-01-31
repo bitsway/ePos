@@ -21,7 +21,7 @@ $.afui.useOSThemes=false;
 
 //var  apipath ='http://127.0.0.1:8000/epos/syncmobile_epos/'
 var  apipath ='http://w02.yeapps.com/epos/syncmobile_epos/'
-var apipath_image='http://i001.yeapps.com/image_hub/unigift/upload_image/'
+var imageURI='http://i001.yeapps.com/image_hub/unigift/upload_image/'
 
 //var  apipath ='http://a007.yeapps.com/acme/medSearch/'
 //var  apipath ='http://127.0.0.1:8000/acme/medSearch/'
@@ -842,7 +842,7 @@ function winProfile(r) {
 
 function failProfile(error) {
 	//$("#error_prescription_submit").text('Memory Error. Please take new picture and Submit');
-}	
+}		
 
 //=================================
 
