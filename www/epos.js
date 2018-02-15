@@ -58,7 +58,7 @@ var apipath_image='http://i001.yeapps.com/image_hub/epos/upload_image/'
 //			//homePage();
 //			$.afui.loadContent("#page_PrescriptionCapture",true,true,'right');
 //		}
-		alert (localStorage.sync)
+		//alert (localStorage.sync)
 		if (localStorage.sync!='YES'){
 			
 			$.afui.loadContent("#signUpPage",true,true,'right');	
@@ -576,7 +576,7 @@ function newMemReg(){
 					localStorage.mobile_no=resultArray[3];
 					
 					localStorage.cid=resultArray[4];
-					localStorage.sync=='YES'
+					localStorage.sync='YES'
 					
 					$("#notes").val('');
 					
