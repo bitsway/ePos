@@ -356,7 +356,7 @@ function codeLatLng(lat, lng) {
 
 function upload_image(imageURI, imageName) {
    // alert (localStorage.photo_submit_url)
-   //alert (imageURI+' |  '+imageName)
+   alert (imageURI+' |  '+imageName)
 	var options = new FileUploadOptions();
     options.fileKey="upload";
     options.fileName=imageName;
@@ -449,8 +449,8 @@ function prescriptionSave(){
 						$("#pSaveBtn").show();
 						if(result2=='Success'){							
 						  
-							//alert (prescriptionPhoto)
-							//alert (p_image)
+							alert (prescriptionPhoto)
+							alert (p_image)
 							upload_image(prescriptionPhoto, p_image);
 							
 							
