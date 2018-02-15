@@ -154,7 +154,36 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 					 <tr height="500px" >
                        
 									<td id="imgStyle" align="center">
-                                    <img src="Penguins.jpg"  alt="Image" height="500px" style="width:100%; "  id="myImage1">
+                                    <section>
+                                          <div class="parent">
+                                            <div class="panzoom">
+                                              <img src="Penguins.jpg"  alt="Image" style="width:100%; height:300px"  id="myImage1"></td>
+                                            </div>
+                                          </div>
+                                          <div class="buttons">
+                                            <button class="zoom-in">&nbsp;&nbsp;+&nbsp;&nbsp;</button>&nbsp;&nbsp;
+                                            <button class="zoom-out">&nbsp;&nbsp;-&nbsp;&nbsp;</button>
+                                            <!--
+                                            <input type="range" class="zoom-range">
+                                            <button class="reset">Reset</button>
+                                            -->
+                                          </div>
+                                          <script>
+                                          // ../test/libs/jquery.js
+                                          // jquery.min.js
+                                            (function() {
+                                              var $section = $('section').first();
+                                              $section.find('.panzoom').panzoom({
+                                                $zoomIn: $section.find(".zoom-in"),
+                                                $zoomOut: $section.find(".zoom-out"),
+                                                $zoomRange: $section.find(".zoom-range"),
+                                                $reset: $section.find(".reset")
+                                              });
+                                            })();
+                                          </script>
+                                          
+                                          
+                                   <!-- <img src="Penguins.jpg"  alt="Image" height="500px" style="width:100%; "  id="myImage1">-->
 										<!--<img    style="width:100%; height:300px" alt="" id="myImage1">-->
 										<input name="prPhoto1" id="prPhoto1" type="hidden" value="" >
 									</td>

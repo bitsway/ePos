@@ -531,7 +531,7 @@ function newMemReg(){
 	  
 	 // alert ('hi')
 	// +'&sync_code='+sync_code
-	 if ((len(m_name)<1) ||(len(m_age)<1) ||(len(mobile_no)<1) ||(len(address)<1)  ||(len(gender)<1)){
+	 if ((m_name.length<1) ||(m_age.length<1) ||(mobile_no.length<1) ||(address.length<1)  ||(gender.length<1)){
 		 
 		 $("#errorChkMem").html('Please complete mandatory field');
 		 
