@@ -643,19 +643,19 @@ navigator.camera.getPicture( cameraSuccess, cameraError, {
 }
 
 function cameraSuccess(uri){  
-	localStorage.picFlag=0
-	var picNo=parseInt(localStorage.picFlag)+1 
+	//localStorage.picFlag=0
+	//var picNo=parseInt(localStorage.picFlag)+1 
 	var imageDiv="myImage1"
 	var imageText="prPhoto1"
 	//var myImagePrescription_show="myImagePrescription_show"
-	localStorage.picFlag=picNo
+	//localStorage.picFlag=picNo
 	var image = document.getElementById(imageDiv);
 	//var image1 = document.getElementById(myImagePrescription_show);
 	image.src = uri;
-	image1.src = uri;
+	//image1.src = uri;
 	imagePath = uri;
 	
-	localStorage.prPhoto1=uri
+	//localStorage.prPhoto1=uri
 	
 	//alert (uri)
 	//takePicture();
