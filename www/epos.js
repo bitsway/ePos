@@ -449,8 +449,8 @@ function prescriptionSave(){
 						$("#pSaveBtn").show();
 						if(result2=='Success'){							
 						  
-							alert (prescriptionPhoto)
-							alert (p_image)
+							//alert (prescriptionPhoto)
+							//alert (p_image)
 							upload_image(prescriptionPhoto, p_image);
 							
 							
@@ -523,8 +523,7 @@ function newMemReg(){
 	  
 	  var address=$("#address").val();
 	  
-	$("#wait_image_memRegbtn").show();
-	$("#memRegbtn").hide();
+	
 	  
 	  //alert(apipath+'memDetailsSave?mobile_no='+mobile_no+'&m_name='+m_name+'&m_age='+m_age+'&gender='+gender+'&status='+status+'&div_name='+div_name+'&dist_name='+dist_name+'&area='+area+'&address='+address)
 	  
@@ -532,6 +531,15 @@ function newMemReg(){
 	  
 	 // alert ('hi')
 	// +'&sync_code='+sync_code
+	 if ((len(m_name)<1) ||(len(m_age)<1) ||(len(mobile_no)<1) ||(len(address)<1)  ||(len(gender)<1)){
+		 
+		 $("#errorChkMem").html('Please complete mandatory field');
+		 
+		 }else{
+		 
+		 $("#wait_image_memRegbtn").show();
+	$("#memRegbtn").hide();
+	
 	  localStorage.sync=='NO'
 	  $.ajax({
 		//type:'POST',
@@ -586,6 +594,8 @@ function newMemReg(){
 		}      
 	  
 	  });	
+	  
+	  }
 	  }
 	  
 
