@@ -140,7 +140,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         
-                        <td align="center">&nbsp;&nbsp;<img src="camera.png" width="40" height="40" alt="TakePic" onClick="takePicture()"></td>
+                        <td align="center">&nbsp;&nbsp;<img src="camera.png" width="100" height="100" alt="TakePic" onClick="takePicture()"></td>
                         
                       </tr>
                      </table>
@@ -154,7 +154,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 					 <tr height="400px" style="width:400px">
                        
 									<td id="imgStyle" align="center">
-										<img  width="500" height="500" alt="" id="myImage1" onClick="gotoPic(1);">
+										<img   style="width:100%; height:300px" alt="" id="myImage1" onClick="gotoPic(1);">
 										<input name="prPhoto1" id="prPhoto1" type="hidden" value="" >
 									</td>
 									<td>
@@ -175,6 +175,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                         <!--<div   style="color:#2232BD; overflow:scroll ; overflow-style:auto; height:500px;" ></div>-->
                  <br><br>
                 <div id="errorChk" style="font-size:16px; color:#399"></div>
+                <img id="wait_image_pSaveBtn" style="width:50px" src="loading.gif" alt="">
                 <input type="submit" id="pSaveBtn" onClick="prescriptionSave()" style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px; margin-top:6px;" value="     Submit     "   />
                 
             
@@ -213,9 +214,9 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
              <br><br><br><br><br><br>	<br><br>
                 <table width="100%" border="0">
                 <tr>
-                <td align="center"><div id="visit_success" style="background-image:url(result_back.png); background-repeat:no-repeat; width:300px; height:200px; color:#FFF; font-size:20px;"  align="center"></br></br></br>Thank you for using our<br> home service. 
+                <td align="center"><div id="visit_success" style="background-image:url(result_back.png); background-repeat:no-repeat; width:300px; height:200px; color:#FFF; font-size:20px;"  align="center"></br>Thank you for using our<br> home service. 
 
-					<br><br>We will contact you soon.</div>
+					<br><br><br>We will contact you soon.</div>
                 	</td>
                 </tr>
                 </table>
@@ -362,7 +363,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                  
               <br>                   
                 
-                
+                <img id="wait_image_memRegbtn" style="width:50px" src="loading.gif" alt="">
                 <input type="submit" id="memRegbtn" onClick="newMemReg();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px;" value="     Login     "   />
                 <div id="errorChkMem" style="font-size:16px; color:#399"></div> 
   

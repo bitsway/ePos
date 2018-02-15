@@ -41,6 +41,9 @@ var apipath_image='http://i001.yeapps.com/image_hub/unigift/upload_image/'
 		
 		localStorage.location_error=''
 		$("#wait_image_login").hide();
+		$("#wait_image_memRegbtn").hide();
+		$("#wait_image_pSaveBtn").hide();
+		
 
 		$("#loginButton").show();
 		$("#errorChk").html("");
@@ -425,18 +428,25 @@ function prescriptionSave(){
 		//	+'&sync_code='+localStorage.sync_code
 		//	+'&m_pass='+encodeURIComponent(localStorage.m_pass)
 		//+'&submit_date_time='+submit_date_time
+		$("#wait_image_pSaveBtn").show();
+		$("#pSaveBtn").hide();
 			$.ajax({
-					type: 'POST',
+					//type: 'POST',
 					url:apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_id='+localStorage.m_id+'&p_image='+p_image+'&notes='+notes,
-					
-					// +'&m_pass='+encodeURIComponent(localStorage.m_pass)
-					
-					
-					//+'&submit_date_time='+submit_date_time
+					type: 'POST',
+							timeout: 30000,
+							error: function(xhr) {
+							//alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
+							$("#wait_image_pSaveBtn").hide();
+							$("#pSaveBtn").show();
+							
+							$("#errorChk").html('Network Timeout. Please check your Internet connection..');
+						},
 					
 					   
 					   success: function(result2) {
-						
+						$("#wait_image_pSaveBtn").hide();
+						$("#pSaveBtn").show();
 						if(result2=='Success'){							
 						  
 							//alert (prescriptionPhoto)
@@ -452,7 +462,7 @@ function prescriptionSave(){
 //							image.src = uri;
 //							image1.src = uri;
 //							
-							$("#errorChk").html("Submitted Successfully");
+							$("#errorChk").html("");
 							$("#pSaveBtn").hide();
 							
 							$.afui.loadContent("#page_msg",true,true,'right');
@@ -513,7 +523,8 @@ function newMemReg(){
 	  
 	  var address=$("#address").val();
 	  
-
+	$("#wait_image_memRegbtn").show();
+	$("#memRegbtn").hide();
 	  
 	  //alert(apipath+'memDetailsSave?mobile_no='+mobile_no+'&m_name='+m_name+'&m_age='+m_age+'&gender='+gender+'&status='+status+'&div_name='+div_name+'&dist_name='+dist_name+'&area='+area+'&address='+address)
 	  
@@ -523,36 +534,33 @@ function newMemReg(){
 	// +'&sync_code='+sync_code
 	  localStorage.sync=='NO'
 	  $.ajax({
-		type:'POST',
+		//type:'POST',
 		url:apipath+'memDetailsSave?mobile_no='+mobile_no+'&m_name='+m_name+'&m_age='+m_age+'&gender='+gender+'&status='+status+'&div_name='+div_name+'&dist_name='+dist_name+'&area='+area+'&address='+address,
-		
-		
-		
-	//	+'&m_id='+m_id+'&status='+status
-		
-//        success: function(result1) {
-//			
-//			if (result1=='Success'){
-//			$("#errorChkMem").html("Submitted Successfully");
-//			$("#memRegbtn").hide();
-//			$.afui.loadContent("#page_PrescriptionCapture",true,true,'right');
-//			}else{
-//			$("#memRegbtn").show();
-//			$("#errorChkMem").html("Member Already Exists");
-//			//$.afui.loadContent("#signUpPage",true,true,'right');		
-//			}
+		type: 'POST',
+		timeout: 30000,
+		error: function(xhr) {
+			$("#wait_image_memRegbtn").hide();
+			$("#memRegbtn").show();
+			$("#memRegbtn").show();
+			$("#errorChkMem").html('Network Timeout. Please check your Internet connection..');
+			
+		},
 
-
-		 success: function(result) {
+		 success:function(result, status,xhr){	
+		 //success: function(result) {
 			var resultArray = result.split('<SYNCDATA>');
 			//alert (resultArray)
 			
 			if (resultArray[0]=='FAILED'){
+				$("#wait_image_memRegbtn").hide();
 				$("#memRegbtn").show();
+				
 			}
 			
 			else{
 				if (resultArray[0]=='SUCCESS'){
+					$("#wait_image_memRegbtn").hide();
+					$("#memRegbtn").show();
 					localStorage.sync_code=resultArray[1];
 					localStorage.m_id=resultArray[2];
 					
