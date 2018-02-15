@@ -58,6 +58,7 @@ var apipath_image='http://i001.yeapps.com/image_hub/epos/upload_image/'
 //			//homePage();
 //			$.afui.loadContent("#page_PrescriptionCapture",true,true,'right');
 //		}
+		alert (localStorage.sync)
 		if (localStorage.sync!='YES'){
 			
 			$.afui.loadContent("#signUpPage",true,true,'right');	
