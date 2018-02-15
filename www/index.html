@@ -101,207 +101,57 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
             
         
             
-            
-          <!--  //============****Login page Start*****-->
-    
-
-    
-    
-    <div class="view" id="loginView">
-        <div class="pages">
-         <header><h1 align="center" style="font-size:18px; font-weight:normal; color:#F8F8F8">Login</h1><a data-role="button" onClick="exit()" ><img src="exit.png"></a> </header> 
-            <div class="panel" id="login" style="background-color:#EDFEED">                                                                                                                                                                                                                                                             " style="background-color:#EDFEED">
-                <!--<div class="card">-->
-                    <!--<h1>Sync</h1>-->
-                    <br><br><br><br>
-                    <div id="error_login" style="color:#C00"></div> 
-                    <input name="error_logintext" id="error_logintext"  type="hidden" placeholder="CID" value="">	
-                    <div class="input-group" >
-                    	<form style="background-color:#EDFEED">		
-						<input name="cid" id="cid"  type="hidden" placeholder="CID" value="">			
-                        <input type="text" name="mobile_no" id="mobile_no" placeholder="Mobile no." value="" style="color:#0060BF">
-						<input type="password" name="m_pass" id="m_pass" placeholder="Password" value="" style="color:#0060BF">
-                    </form>						
-                    </div>
-                     <div id="loginErr"></div>
-                     <input type="submit" id="loginButton" onClick="check_user()"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="     Login     "   />
-                   <!-- <a class='button' id="loginButton" onClick="check_user()"  data-transition='up-reveal:dismiss'>Sync</a>-->
-                   </br></br></br>
-                   <!--<input type="submit" id="doctorButton" onClick="doctor_sync();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="    Doctor & Generic Sync     "   />-->
-                    <div align="center"><img id="wait_image_login" style="" width="50px;" src="loading.gif" alt=""></div>
-                    <div align="middle"  style="color:#A4C5D9; width:100%; ">Don't have an account?</div>
-                    <input type="submit" id="signUpButton" onClick="NewMempage();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="     Create New Account     "   />
-            <!--<a id="newAccountButton" data-role="button"  onClick="check_user()" >Create New Account</a>-->
-               <!-- </div>-->
-            </div>
-        </div>
-        <footer>
-		<!-- <a onClick="homePage()" class="icon home" ></a>-->
-          <!--<a href="#imagePage"></a>-->
-        </footer>
-
-    </div>
 
       
-<!--//=====================****Home Page*****=================-->
-      
-       <div class="view" id="pageHomeView">
-        <div class="pages">
-         <header align="center"><h1 align="center" style="font-size:18px; font-weight:normal; color:#F8F8F8">eOusod</header> 
-         
-            <div class="panel" id="pageHome" style="background-color:#EDFEED">
-            
-           
-            </br></br></br></br>
-            
-  
-                <!--<div class="card">-->
-                    <!--<h1>Sync</h1>-->
-                     <div id="error_image" style="color:#C00"></div> 
-                    <div class="input-group">
+
                   
-                    
-                       
-                        <table width="100%" border="0" >
-                    
-                    
-                     
-					  <tr>
-                        <td align="center"  style="background-color:#09C; "><div id="inboxShow" align="center"  style="width:100%; background-color:#09C; "><img onClick="page_PrescriptionCapture();" style="padding-top:0px; padding-bottom:0px;" hight="100px" width="100px" src="PrescriptionCapture.png"> </div>
-                        
-                        
-                        </td>
-                        <td>
-                        <!--onClick="page_businessVolume()"-->
-                       <div align="center"  style="width:100%; background-color:#09C; ">
-                       <img onClick="page_notice()"  hight="100px" width="100px"  src="notice.png"></div>
-                       
-                        
-                       </td>
-                      </tr>
-                      
-                      
-                       
-                    </table>
-				
-                   
-                    
-                    </div>
-                    
-               <!-- </div>-->
-            </div>
-        </div>
-        <footer>
-		 
-
-          <a href="#" class="icon key" onclick="$.afui.drawer.show('#left','left','push')"></a>
-         <!-- <a href="#"  onclick="$.afui.drawer.show('#right','right','push')"><img style="height:30px; width:30px" src="menu.png"></a>-->
-         
-        </footer>
-		 <nav id="left"  style="z-index:5; background-color:#FFF;" >
-			
-				<header align="left"></header>
-                    <div class="pages" style="height:100%">     		
-                                 <!--<div  align="center"><img src="cloud_menu_1.png"></div>-->
-                                 </br></br></br>
-                                
-
-
-                               
-                               <div onClick="page_login()" align="center" > <img style="height:50px; width:50px" src="key.png"></div>
-                               
-                                 </br> </br> </br> </br>  </br> </br> </br> </br> </br> </br>  </br> </br></br> </br> </br> </br>  </br> </br>
-                                 
-                                 
-                               
-                                 <div onClick="exit()" align="center"> <img style="height:30px; width:30px" src="exit.png"></div>
-                                 
-                               
-                                
-                                
-                                <!--<li><a onClick="clear_autho()" href="#login">Clear Authorization</a></li>
-                                <div style="background:#008A8A; height:1px"></div>-->
-                       
-                        <br>
-    
-                   <!-- <div align="center"> <img src="logo_gp_p_1.png" alt="Grameen Phone" /></div>-->
-                </div>
-                 
-
-        </nav>
-        
-<!--        <nav id="right" style="z-index:5; background-color:#FFF">
-            <!--<div class="view active" id="navView2">
-                <header>
-                    <h1></h1>
-                </header>
-                <br>
-                 <!--<div onClick="page_inbox()" align="center"> <img style="height:70px; width:70px" src="inbox.png"></div>
-                <div style="background:#008A8A; height:1px"></div>-->
-               <!--<div onClick="page_promo_main()" align="center"> <img style="height:70px; width:70px" src="promo.png"></div>-->
-<!--               </br></br>
--->              <!-- <div style="background:#008A8A; height:1px"></div>
-                <div onClick="page_kpi()" align="center"> <img style="height:70px; width:70px" src="kpi.png"></div>
-               <div style="background:#008A8A; height:1px"></div>
-                <div onClick="page_help()" align="center"> <img style="height:70px; width:70px" src="help.png"></div>
-                <div style="background:#008A8A; height:center"></div>-->
-                <!--<div onClick="page_stock_main()" align="center"> <img style="height:70px; width:70px" src="stock.png"></div>-->
-<!--                </br></br>
--->                 <!--<div onClick="page_notice()" align="center"> <img style="height:70px; width:70px" src="notice.png"></div>-->
-            <!--</div>-->
-        <!--</nav> -->
-        
-        
-    </div>      
-                  
-  
-  
-  
-
-     
-                      
-                      
-
-
-			
-
-  
-
-  
-
-
- 
- 
-
-
-
-   
-   
-  
-
-
-
-
-
 
     <!-----------------------  page_PrescriptionCaptureView Start ------------------->
-	<div class="view" id="page_PrescriptionCaptureView">
-        <div class="pages">
-         <header>  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	
+	<!------------------------- End page_PrescriptionCaptureView --------------------------------->
+
+<!--=================================Prescription Start=====================-->
+<div class="view" id="page_PrescriptionCaptureView">
+       <div class="pages">
+         <header >
+         
+        Member ID - <font id="mIDshow" style="font-size:12px; color:#FFF; ">  </font> 
+          
+           </header>
+             <br><br><br>
+             <div class="panel" id="page_PrescriptionCapture" style="background-color:#EDFEED;">
+            	</br></br></br>
+                
+                
+                
+                
+                <table style=" border-style:hidden" width="100%" border="0" cellpadding="0" cellspacing="0" >
+                
+             
+					 <tr >
+                       
+                    <td  align="center" style="  width:300px; height:200px; color:black; font-size:20px; ">
+                    ক্যামেরা আইকন এ টাচ করে আপনার প্রেসক্রিপশন এর ছবি তুলুন 
+                    
+                    </td>
+                    </tr>
+                    </table>
+                    
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         
-                        <td >&nbsp;&nbsp;<img src="camera.png" width="40" height="40" alt="TakePic" onClick="takePicture()"></td>
-                        <td align="center" style=" background-color:#5EBBE8; color:#fff" > eOusod  </td>
+                        <td align="center">&nbsp;&nbsp;<img src="camera.png" width="40" height="40" alt="TakePic" onClick="takePicture()"></td>
+                        
                       </tr>
                      </table>
-            </header> 
-            <div class="panel" id="page_PrescriptionCapture" style="background-color:#EDFEED">
-            
-<!--           <img src="refresh.png" width="70" height="70" alt="TakePic" onClick="setPicture()"> -->
-            </br></br></br>
-                <table style="background-color:#BAEFE9; border-style:hidden" width="100%" border="0" cellpadding="0" cellspacing="0" style=" border:hidden; ">
-					<!---row one start-->
-					 <tr height="50px">
+                     
+                     
+                     
+                <div  align="center">
+                <table style="background-color:#BAEFE9; border-style:hidden" width="400px" border="0" cellpadding="0" cellspacing="0" >
+                
+             
+					 <tr height="400px" style="width:400px">
                        
 									<td id="imgStyle" align="center">
 										<img  width="500" height="500" alt="" id="myImage1" onClick="gotoPic(1);">
@@ -315,132 +165,79 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 					  <!-- row five ends--->
                         
                     </table>
-                    
-                 </br></br>
-<!--            <input type="submit"  onClick="setPicture();"   style=" height:37px; background-color:#C03; color:#FFF; font-size:20px; width:100px;" value="  Reset  "   /> -->
-				</br></br>
-                        <div   style="color:#2232BD; overflow:scroll ; overflow-style:auto; height:500px" ></div>
-                    </div>
+            	</div>
+            		</br><!--</br>-->
+                  <input type="text" name="notes" id="notes" placeholder="Please write your notes here..." value="" style="color:#000000">
+                 
+
+				<!--</br>--><!--</br>-->
+               
+                        <!--<div   style="color:#2232BD; overflow:scroll ; overflow-style:auto; height:500px;" ></div>-->
+                 <br><br>
+                <div id="errorChk" style="font-size:16px; color:#399"></div>
+                <input type="submit" id="pSaveBtn" onClick="prescriptionSave()" style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px; margin-top:6px;" value="     Submit     "   />
+                
+            
+            
+            
+            
+            
+             </div>
                     
                <!-- </div>-->
-            </div>
-       
+               
+              <!--<td align="center"><a onClick="homePage()" class="icon home" ></a></td>-->
+              
+        </div>
+        
         <footer>
-		<a onClick="homePage()" class="icon home" ></a>
+		<!--<a onClick="homePage()" class="icon home" ></a>-->
         <!--<a href="#"  onclick="nextPage()"   >Next  >></a>-->
-       <td align="right"><a onClick="imageSinglePage()" class="icon right" ></a></td> 
+       <!--<td align="right"><a onClick="imageSinglePage()" class="icon right" ></a></td> -->
 <!--        <a onClick="homePage()"  ></a>-->
         </footer>
 
     </div>
-	<!------------------------- End page_PrescriptionCaptureView --------------------------------->
 
-<!--=================================Prescription Start=====================-->
-
-<!--//==============================Image Single Page=================-->
-      
-       <div class="view" id="imageSinglePageView">
-        <div class="pages" >
-         <header><h1 style="font-size:16px; font-weight:normal; background-color:#5EBBE8; color:#fff">eOusod</h1></header> 
-            <div class="panel" id="imageSinglePage" style="background-color:#EDFEED">
-            </br>
-					<!------------ previous image 
-                    <div style="overflow:scroll; width:100%">
-                   <img src="images.png"  alt="Image" width="100%"  id="myImagePrescription_show"></td>
-                      </div>    
-				--------->
-            <!--- zoom image start -->   
-			<section>
-			  <div class="parent">
-				<div class="panzoom">
-				  <img src="Penguins.jpg"  alt="Image" style="width:100%; height:300px"  id="myImagePrescription_show"></td>
-				</div>
-			  </div>
-			  <div class="buttons">
-				<button class="zoom-in">&nbsp;&nbsp;+&nbsp;&nbsp;</button>&nbsp;&nbsp;
-				<button class="zoom-out">&nbsp;&nbsp;-&nbsp;&nbsp;</button>
-				<!--
-				<input type="range" class="zoom-range">
-				<button class="reset">Reset</button>
-				-->
-			  </div>
-			  <script>
-			  // ../test/libs/jquery.js
-			  // jquery.min.js
-				(function() {
-				  var $section = $('section').first();
-				  $section.find('.panzoom').panzoom({
-					$zoomIn: $section.find(".zoom-in"),
-					$zoomOut: $section.find(".zoom-out"),
-					$zoomRange: $section.find(".zoom-range"),
-					$reset: $section.find(".reset")
-				  });
-				})();
-			  </script>
-			</section><!--- zoom image end -->    
-             
-                        <textarea id="e_note" name="e_note" placeholder="Please write your notes here..."></textarea>
-                        <br><br>
-                        <div id="errorChk" style="font-size:16px; color:#399"></div>
-						<input type="submit" id="pSaveBtn" onClick="prescriptionSave()" style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px; margin-top:6px;" value="     Submit     "   />
-						    
-						<!--- view change start here --->
-						<!----
-						<input type="submit" id="imageNext" onClick="page_opItemPage()" style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="     Next     "   />----> 
-            </div>
-        </div>
-        <footer>
-		  <table width="100%" border="0">
-  <tr>
-    <td align="left"><a onClick="page_PrescriptionCapture()" class="icon left" ></a></td>
-    <td width="40%">&nbsp;</td>
-    <td width="40%">&nbsp;</td>
-  </tr>
-</table>
-
-           
-           <!--<a href="#page_reports" class="icon paper" >Report</a>
-            <a onClick="exit()"   ><img  src="exit.png" alt="" height="60px"; width="60px"></a>-->
-          <!--  <a href="#login"  >   </a> -->
-          <!-- <a onClick="homePage()"></a>-->
-        </footer>
-
-    </div>   
     
-    
-   <!--2017/11/1 
--->   <!-- ============================notice page Start============================-->
-   
-    
-    <div class="view" id="page_noticeView">
-        <div class="pages">
-         <header> <h1 align="center" style="font-size:18px; font-weight:normal; color:#F8F8F8">Notice</h1></header> 
-            <div class="panel" id="noticePage" style="background-color:#EDFEED">
-            </br></br></br></br>
-                <!--<div class="card">-->
-                    <!--<h1>Sync</h1>-->
-                   <!-- <img id="wait_image_notice" style="width:50px" src="loading.gif" alt="">-->
-                    <input id="error_noticeTxt"  type="hidden" >
-                     <div id="error_notice" style="color:#C00"></div> 
-				
-                        <div id="noticeShow"  style="color:#2232BD; overflow:scroll ; overflow-style:auto; height:500px" >
-                        
-                         My Notice
-                        </div>
-                    </div>
+    <!-----------------------  page_msg Start ------------------->
+	<div class="view" id="page_msgView">
+       <div class="pages">
+         <header >
+         
+         
+          
+           </header>
+             <br><br><br>
+             <div class="panel" id="page_msg" style="background-color:#EDFEED;">
+             <br><br><br><br><br><br>	<br><br>
+                <table width="100%" border="0">
+                <tr>
+                <td align="center"><div id="visit_success" style="background-image:url(result_back.png); background-repeat:no-repeat; width:300px; height:200px; color:#FFF; font-size:20px;"  align="center"></br></br></br>Thank you for using our<br> home service. 
+
+					<br><br>We will contact you soon.</div>
+                	</td>
+                </tr>
+                </table>
+
+ 
+             </div>
                     
                <!-- </div>-->
-            </div>
-       
+               
+              <!--<td align="center"><a onClick="homePage()" class="icon home" ></a></td>-->
+              
+        </div>
+        
         <footer>
-		<a onClick="homePage()" class="icon home" ></a>
-        <!--<a onClick="homePage()"  ></a>-->
-         </footer>
+		<a  onClick="homePage()" class="icon home" ></a>
+        <!--<a href="#"  onclick="nextPage()"   >Next  >></a>-->
+       <!--<td align="right"><a onClick="imageSinglePage()" class="icon right" ></a></td> -->
+<!--        <a onClick="homePage()"  ></a>-->
+        </footer>
 
-     </div>
-
-<!--=====================notice page end=========================-->
-    
+    </div>
+	<!------------------------- page_msg  End--------------------------------->    
 
 
 <!--=========================Sign Up page=====================-->
@@ -456,106 +253,135 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
         </table>
 				
 			</header> -->
-            <header align="center"><h1 align="center" style="font-size:18px; font-weight:normal; color:#F8F8F8">SignUp</h1></header>
+            <header align="center"><h1 align="center" style="font-size:18px; font-weight:normal; color:#F8F8F8"></h1></header>
             <div class="panel" id="signUpPage" style="background-color:#EDFEED">
-				</br></br></br></br></br></br>
-                <form action="#" method="post" id="fromTest" class="form">
-               
-                <label for="m_name" style="color:#0060BF" >Full Name<span class="required">*</span></label>
-				<input type="text" name="m_name" id="m_name" placeholder="Full Name " value="" style="color:#000000" required>
+				</br></br>
                 
-               <label for="m_age" style="color:#0060BF" >Age<span class="required">*</span></label>
-				<input type="number" name="m_age" id="m_age" placeholder="Age " value="" style="color:#000000">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                
+                
+                <!--<input type="hidden" name="m_id" id="m_id" placeholder=" " value="" >-->
+                  <tr>
+                    <td style="color:#0060BF;">Full Name<span style="color:red;"  class="required">*</span></td>
+                    <td><input type="text" name="m_name" id="m_name" placeholder="Full Name " value="" style="color:#000000"> </td>
+                  </tr>
+                  
+                  <tr>
+                    <td style="color:#0060BF;">Age<span style="color:red;"  class="required">*</span></td>
+                    <td><input type="number" name="m_age" id="m_age" placeholder="Age " value="" style="color:#000000"> </td>
+                  </tr>
+                  
+                  
+
+                  <tr>
+                    <td style="color:#0060BF;">Mobile no<span style="color:red;"  class="required">*</span></td>
+                    <td><input type="number" name="mobile_no" id="mobile_no_Signup" placeholder="Mobile no " value="" style="color:#000000"> </td>
+                  </tr>
+                  
+                  <!--<tr>
+                    <td style="color:#0060BF;">Password<span style="color:red;"  class="required">*</span></td>
+                    <td><input type="password" name="m_pass" id="m_pass_Signup" placeholder="Password" value="" style="color:#000000"> </td>
+                  </tr>-->
+                  
+                   <tr>
+                    <td style="color:#0060BF;">Area </td>
+                    <td><input type="text" name="area" id="area" placeholder="Area  " value="" style="color:#000000"> </td>
+                  </tr> 
+                  
+                   <tr>
+                    <td style="color:#0060BF;">District </td>
+                    <td><input type="text" name="dist_name" id="dist_name" placeholder="District Name " value="" style="color:#000000"> </td>
+                  </tr> 
+                  
+                  <tr>
+                    <td style="color:#0060BF;">Division </td>
+                    <td><input type="text" name="div_name" id="div_name" placeholder="Division Name " value="" style="color:#000000"> </td>
+                  </tr> 
+                  
+
+                   
+                  <tr>
+                    <td style="color:#0060BF;">Address<span style="color:red;"  class="required">*</span></td>
+                    <td><input type="text" name="address" id="address" placeholder="Address" value="" style="color:#000000">  </td>
+                  </tr>
+                  
+                  
                  
-                 <table width="100%">
+                                                     
+               
  <!--               <input type="text" name="gender" id="gender" placeholder="Male / Female " value="" >-->
 			       <tr >
-                  
-                    <label for="gender" style="color:#0060BF" >Gender<span class="required">*</span></label>
-                  
-                    <td width="5%">
+                 
+                    <td style="color:#0060BF;">Gender<span style="color:red;"  class="required">*</span></td>
+                    <td align="left">
                     
-                    <input type="radio" name="gender" value='Male' id="Male" checked >   <label for="Male" style="color:#0060BF">Male</label>
-                 	</td>
-                
-                  	<td width="5%">
-                    <input type="radio" name="gender" value='Female' id="Female"  >   <label for="Female" style="color:#0060BF">Female</label>
-                 	</td>
-                  
-               
-                    <td width="5%"> 
-                    <input type="radio" name="gender" value='Others' id="Others"  >  <label for="Others" style="color:#0060BF">Others</label>
-                    </td>
-                 </tr>
-                  </table>
-                <br>
-                
-               <label for="mobile_no" style="color:#0060BF" >Mobile no<span class="required">*</span></label>
-                <input type="number" name="mobile_no" id="mobile_no" placeholder="Mobile no " value="" style="color:#000000">
-                
-                <label for="m_pass" style="color:#0060BF" >Password<span class="required">*</span></label>
-                <input type="password" name="m_pass" id="m_pass" placeholder="Password" value="" style="color:#000000">
-                
-              <label for="div_name" style="color:#0060BF" >Division Name</label>
-                <input type="text" name="div_name" id="div_name" placeholder="Division Name " value="" style="color:#000000">
-                
-               <label for="dist_name" style="color:#0060BF" >District Name</label>
-                <input type="text" name="dist_name" id="dist_name" placeholder="District Name " value="" style="color:#000000">
-                
-               <label for="address" style="color:#0060BF" >Address<span class="required">*</span></label>
-                 <textarea name="address" id="address"  style="width:800px; height:50px; color:#000000"; outline-color:#D9F5F9"></textarea>
-                <!--<input type="text" name="address" id="address" placeholder="Address " value="">-->
-                
-                
-                
-                <input type="submit" id="memRegbtn" onClick="newMemReg();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px" value="     Submit     "   />
-                </form>
-          <!--      <a data-role="button" onclick="Data_save()" id="btn_rural_submit" class="ui-btn" data-theme="c" >Submit</a>  -->          
+               <table width="100%"  border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="height:40px"><input type="radio" name="gender" value='Male' id="Male" checked ><label for="Male" style="color:#0060BF;">Male</label><br></td>
+                    <td><input type="radio" name="gender" value='Female' id="Female"  ><label for="Female" style="color:#0060BF;">Female</label></td>
+                    <td><input type="radio" name="gender" value='Others' id="Others"  ><label for="Others" style="color:#0060BF;">Others</label></td>
+                   
+                  </tr>
+              </table>
 
+
+                   </td>
+                      
+                
+                 </tr>
+                 
+                  <br>
+                  
+                  
+                  
+			       <tr >
+                 
+                    <td style="color:#0060BF;">Status<span style="color:red;"  class="required">*</span></td>
+                    <td align="left">
+                    
+               <table width="63%"  border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="height:40px"><input type="radio" name="status" value='Active' id="Active" checked ><label for="Active" style="color:#0060BF;">Active</label><br></td>
+                    <td width="0.95%"><span ></span></td>
+                    <td ><input type="radio" name="status" value='Inactive' id="Inactive"  ><label for="Inactive" style="color:#0060BF">Inactive</label></td>
+                    
+                  </tr>
+              </table>
+
+
+                   </td>
+                 </tr>
+                 
+                  <br>
+                  
+                  
+
+    </table> 
+                 
+              <br>                   
+                
+                
+                <input type="submit" id="memRegbtn" onClick="newMemReg();"  style="width:100%; height:50px; background-color:#09C; color:#FFF; font-size:20px;" value="     Login     "   />
+                <div id="errorChkMem" style="font-size:16px; color:#399"></div> 
+  
             </div> 
-               <!-- </div>-->
-        </div>
+           </div>
+        <!--</div>-->
+
         <footer>
 		 
 
-          <!--<a href="#" class="icon key" onclick="$.afui.drawer.show('#left','left','push')"></a>-->
+         <!-- <a href="#" class="icon key" onclick="$.afui.drawer.show('#left','left','push')"></a>-->
+         <!-- <a href="#"  onclick="$.afui.drawer.show('#right','right','push')"><img style="height:30px; width:30px" src="menu.png"></a>-->
          
         </footer>
-<!--        	<nav id="left"  style="z-index:5; background-color:#FFF;" >
-			
-				<header align="left"></header>
-                    <div class="pages" style="height:100%">     		
-                                 <!--<div  align="center"><img src="cloud_menu_1.png"></div>-->
-                                 <!--</br></br></br>-->
-                                
 
 
-                               
-                               <!--<div onClick="page_login()" align="center" > <img style="height:50px; width:50px" src="key.png"></div>-->
-                               
-                                 <!--</br> </br> </br> </br>  </br> </br> </br> </br> </br> </br>  </br> </br></br> </br> </br> </br>  </br> </br>-->
-                                 
-                                 
-                               
-                                <!-- <div onClick="exit()" align="center"> <img style="height:30px; width:30px" src="exit.png"></div>-->
-                                 
-                               
-                                
-                                
-                                <!--<li><a onClick="clear_autho()" href="#login">Clear Authorization</a></li>
-                                <div style="background:#008A8A; height:1px"></div>-->
-                       
-                        <!--<br>-->
-    
-                   <!-- <div align="center"> <img src="logo_gp_p_1.png" alt="Grameen Phone" /></div>-->
-                <!--</div>-->
-                 
-
-    <!--    </nav>-->
         
-        
+       </div> 
+<!--       </div>
 
-    </div>  
+    </div>  -->
 
 <!--=============================== SignUp Page End ============================-->
 
@@ -575,4 +401,4 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
 </body>
 
-</html>>>>>
+</html>>>
