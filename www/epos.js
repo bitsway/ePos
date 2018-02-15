@@ -356,7 +356,7 @@ function codeLatLng(lat, lng) {
 
 function upload_image(imageURI, imageName) {
    // alert (localStorage.photo_submit_url)
-   alert (imageURI+' |  '+imageName)
+   //alert (imageURI+' |  '+imageName)
 	var options = new FileUploadOptions();
     options.fileKey="upload";
     options.fileName=imageName;
@@ -647,10 +647,10 @@ function cameraSuccess(uri){
 	var picNo=parseInt(localStorage.picFlag)+1 
 	var imageDiv="myImage1"
 	var imageText="prPhoto1"
-	var myImagePrescription_show="myImagePrescription_show"
+	//var myImagePrescription_show="myImagePrescription_show"
 	localStorage.picFlag=picNo
 	var image = document.getElementById(imageDiv);
-	var image1 = document.getElementById(myImagePrescription_show);
+	//var image1 = document.getElementById(myImagePrescription_show);
 	image.src = uri;
 	image1.src = uri;
 	imagePath = uri;
