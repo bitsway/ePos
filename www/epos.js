@@ -19,13 +19,13 @@ $.afui.useOSThemes=false;
 
 /********  apipath *****************/
 
-//var  apipath ='http://127.0.0.1:8000/epos/syncmobile_epos/'
+var  apipath ='http://127.0.0.1:8000/epos/syncmobile_epos/'
 
 //var apipath_image='http://i001.yeapps.com/image_hub/unigift/upload_image/'
 
 
-var  apipath ='http://w02.yeapps.com/epos/syncmobile_epos/'
-var apipath_image='http://i001.yeapps.com/image_hub/epos/upload_image/'
+//var  apipath ='http://w02.yeapps.com/epos/syncmobile_epos/'
+//var apipath_image='http://i001.yeapps.com/image_hub/epos/upload_image/'
 
 /******** EPOS apipath *****************/
 
@@ -123,8 +123,8 @@ function getLocationInfo() { //location
 	
 	
 	
-	$("#wait_image_visit_submit_doc").hide()
-	$("#visit_submit_doc").show();
+	//$("#wait_image_visit_submit_doc").hide()
+	//$("#visit_submit_doc").show();
 	//$("#visit_location_doc").hide();
 	$("#checkLocation_doc").html('');
 	
@@ -132,7 +132,7 @@ function getLocationInfo() { //location
 	
 	$("#errorChkVSubmit").html('');
 	//$("#errorConfiProfileUpdate").html('');
-	$("#errorChkVSubmit_doc").html('');
+	//$("#errorChkVSubmit_doc").html('');
 	
 	var options = { enableHighAccuracy: true, timeout:15000};
 	//var options = { enableHighAccuracy: true, timeout:1000};
@@ -447,10 +447,17 @@ function prescriptionSave(){
 					
 					   
 					   success: function(result2) {
-						$("#wait_image_pSaveBtn").hide();
-						$("#pSaveBtn").show();
-						if(result2=='Success'){							
-						  
+						   
+						 var resultArray = result2.split('<SYNCDATA>');
+			             //alert (resultArray)
+						 
+						//$("#wait_image_pSaveBtn").hide();
+						//$("#pSaveBtn").show();
+						
+						if (resultArray[0]=='Success'){
+						//if(result2=='Success'){							
+						   $("#wait_image_pSaveBtn").hide();
+						   $("#pSaveBtn").show();
 							//alert (prescriptionPhoto)
 							//alert (p_image)
 							upload_image(prescriptionPhoto, p_image);
@@ -465,6 +472,9 @@ function prescriptionSave(){
 //							image1.src = uri;
 //							
 							$("#errorChk").html("");
+							
+							$("#notes").val('');
+							
 							$("#pSaveBtn").hide();
 							
 							//$("#pSaveBtn").show();
@@ -473,9 +483,17 @@ function prescriptionSave(){
 							
 													
 						}else{
-							$("#errorChk").html('Unauthorized Access');																	
-							$("#pSaveBtn").show();
+							//$("#errorChk").html('Unauthorized Access');
+							
+							if (resultArray[0]=='Failed'){
+								
+								$("#wait_image_pSaveBtn").hide();
+																									
+								$("#pSaveBtn").show();
+								
+								$("#errorChk").html(resultArray[1]);
 							}
+						}
 					   
 					   }});
 						
