@@ -20,10 +20,11 @@ $.afui.useOSThemes=false;
 /********  apipath *****************/
 
 //var  apipath ='http://127.0.0.1:8000/epos/syncmobile_epos/'
-
+//var  apipath ='http://127.0.0.1:8000/epos/syncmobile_epos/'
 //var apipath_image='http://i001.yeapps.com/image_hub/unigift/upload_image/'
 
-
+//var  apipath ='http://a007.yeapps.com/acme/medSearch/'
+//var  apipath ='http://127.0.0.1:8000/acme/medSearch/'
 var  apipath ='http://w02.yeapps.com/epos/syncmobile_epos/'
 var apipath_image='http://i001.yeapps.com/image_hub/epos/upload_image/'
 
@@ -35,7 +36,7 @@ var apipath_image='http://i001.yeapps.com/image_hub/epos/upload_image/'
         $.afui.launch();
 		
 		
-		$('#mIDshow').html(localStorage.m_id);
+		//$('#mIDshow').html(localStorage.m_id);
 		
 		
 		localStorage.location_error=''
@@ -85,20 +86,18 @@ var apipath_image='http://i001.yeapps.com/image_hub/epos/upload_image/'
 //=============================================
 
 //page_PrescriptionCapture
-
 function homePage() {
-	
-	$("#pSaveBtn").show();
+
 	$.afui.loadContent("#page_PrescriptionCapture",true,true,'right');
 
 }
 
 
 
-//function page_login() {
-//	
-//	$.afui.loadContent("#login",true,true,'right');
-//}
+function page_login() {
+	
+	$.afui.loadContent("#login",true,true,'right');
+}
 
 
 
@@ -467,8 +466,6 @@ function prescriptionSave(){
 							$("#errorChk").html("");
 							$("#pSaveBtn").hide();
 							
-							//$("#pSaveBtn").show();
-							
 							$.afui.loadContent("#page_msg",true,true,'right');
 							
 													
@@ -543,8 +540,7 @@ function newMemReg(){
 		 
 		 $("#wait_image_memRegbtn").show();
 	$("#memRegbtn").hide();
-
-
+	
 	  localStorage.sync=='NO'
 	  $.ajax({
 		//type:'POST',
@@ -635,10 +631,10 @@ function gotoPic(picNo) {
 
 
 
-//function page_prItemPage(){
-//	
-//	$.afui.loadContent("#page_prItemPage",true,true,'right');
-//}
+function page_prItemPage(){
+	
+	$.afui.loadContent("#page_prItemPage",true,true,'right');
+}
 
 
 
