@@ -469,6 +469,7 @@ function prescriptionSave(){
 									var image = document.getElementById(imageDiv);
 									//var image1 = document.getElementById(myImagePrescription_show);
 									image.src = uri;
+									
 									//image1.src = uri;
 		//							
 									$("#errorChk").html("");
