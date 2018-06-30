@@ -425,77 +425,83 @@ function prescriptionSave(){
 //alert('ok')
 				
 			//alert(apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_id='+localStorage.m_id+'&p_image='+p_image+'&notes='+notes)
+		if (prescriptionPhoto!=''){	
 			
-			
-		//	+'&sync_code='+localStorage.sync_code
-		//	+'&m_pass='+encodeURIComponent(localStorage.m_pass)
-		//+'&submit_date_time='+submit_date_time
-		$("#wait_image_pSaveBtn").show();
-		$("#pSaveBtn").hide();
-			$.ajax({
-					//type: 'POST',
-					url:apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_id='+localStorage.m_id+'&p_image='+p_image+'&notes='+notes,
-					type: 'POST',
-							timeout: 30000,
-							error: function(xhr) {
-							//alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
-							$("#wait_image_pSaveBtn").hide();
-							$("#pSaveBtn").show();
+				//	+'&sync_code='+localStorage.sync_code
+				//	+'&m_pass='+encodeURIComponent(localStorage.m_pass)
+				//+'&submit_date_time='+submit_date_time
+				$("#wait_image_pSaveBtn").show();
+				$("#pSaveBtn").hide();
+					$.ajax({
+							//type: 'POST',
+							url:apipath+'prescriptionSubmit?cid='+localStorage.cid+'&mobile_no='+localStorage.mobile_no+'&m_id='+localStorage.m_id+'&p_image='+p_image+'&notes='+notes,
+							type: 'POST',
+									timeout: 30000,
+									error: function(xhr) {
+									//alert ('Error: ' + xhr.status + ' ' + xhr.statusText);
+									$("#wait_image_pSaveBtn").hide();
+									$("#pSaveBtn").show();
+									
+									$("#errorChk").html('Network Timeout. Please check your Internet connection..');
+								},
 							
-							$("#errorChk").html('Network Timeout. Please check your Internet connection..');
-						},
-					
-					   
-					   success: function(result2) {
-						   
-						 var resultArray = result2.split('<SYNCDATA>');
-			             //alert (resultArray)
-						 
-						//$("#wait_image_pSaveBtn").hide();
-						//$("#pSaveBtn").show();
-						
-						if (resultArray[0]=='Success'){
-						//if(result2=='Success'){							
-						   $("#wait_image_pSaveBtn").hide();
-						   $("#pSaveBtn").show();
-							//alert (prescriptionPhoto)
-							//alert (p_image)
-							upload_image(prescriptionPhoto, p_image);
-							
-							
-							//var imageDiv="myImage1"
-//							var myImagePrescription_show="myImagePrescription_show"
-//							var uri=''
-//							var image = document.getElementById(imageDiv);
-//							var image1 = document.getElementById(myImagePrescription_show);
-//							image.src = uri;
-//							image1.src = uri;
-//							
-							$("#errorChk").html("");
-							
-							$("#notes").val('');
-							
-							$("#pSaveBtn").hide();
-							
-							//$("#pSaveBtn").show();
-							
-							$.afui.loadContent("#page_msg",true,true,'right');
-							
-													
-						}else{
-							//$("#errorChk").html('Unauthorized Access');
-							
-							if (resultArray[0]=='Failed'){
+							   
+							   success: function(result2) {
+								   
+								 var resultArray = result2.split('<SYNCDATA>');
+								 //alert (resultArray)
+								 
+								//$("#wait_image_pSaveBtn").hide();
+								//$("#pSaveBtn").show();
 								
-								$("#wait_image_pSaveBtn").hide();
-																									
-								$("#pSaveBtn").show();
-								
-								$("#errorChk").html(resultArray[1]);
-							}
-						}
-					   
-					   }});
+								if (resultArray[0]=='Success'){
+								//if(result2=='Success'){							
+								   $("#wait_image_pSaveBtn").hide();
+								   $("#pSaveBtn").show();
+									//alert (prescriptionPhoto)
+									//alert (p_image)
+									upload_image(prescriptionPhoto, p_image);
+									
+									
+									//var imageDiv="myImage1"
+		//							var myImagePrescription_show="myImagePrescription_show"
+		//							var uri=''
+		//							var image = document.getElementById(imageDiv);
+		//							var image1 = document.getElementById(myImagePrescription_show);
+		//							image.src = uri;
+		//							image1.src = uri;
+		//							
+									$("#errorChk").html("");
+									
+									$("#notes").val('');
+									
+									$("#pSaveBtn").hide();
+									
+									//$("#pSaveBtn").show();
+									
+									$.afui.loadContent("#page_msg",true,true,'right');
+									
+															
+								}else{
+									//$("#errorChk").html('Unauthorized Access');
+									
+									if (resultArray[0]=='Failed'){
+										
+										$("#wait_image_pSaveBtn").hide();
+																											
+										$("#pSaveBtn").show();
+										
+										$("#errorChk").html(resultArray[1]);
+									}
+								}
+							   
+							   }
+							   
+							   });
+					}
+					else{
+						$("#errorChk").html('Please Capture Image');
+					}
 						
 		}
 		 
