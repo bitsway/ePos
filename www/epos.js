@@ -463,13 +463,13 @@ function prescriptionSave(){
 									upload_image(prescriptionPhoto, p_image);
 									
 									
-									//var imageDiv="myImage1"
-		//							var myImagePrescription_show="myImagePrescription_show"
-//									var uri=''
-//									var image = document.getElementById(imageDiv);
-//									var image1 = document.getElementById(myImagePrescription_show);
-//									image.src = uri;
-//									image1.src = uri;
+									var imageDiv="myImage1"
+									var myImagePrescription_show="myImagePrescription_show"
+									var uri=''
+									var image = document.getElementById(imageDiv);
+									var image1 = document.getElementById(myImagePrescription_show);
+									image.src = uri;
+									image1.src = uri;
 		//							
 									$("#errorChk").html("");
 									
@@ -478,7 +478,7 @@ function prescriptionSave(){
 									$("#pSaveBtn").hide();
 									
 									//$("#pSaveBtn").show();
-									location.reload();
+									//location.reload();
 									$.afui.loadContent("#page_msg",true,true,'right');
 									
 															
